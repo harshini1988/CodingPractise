@@ -1,0 +1,51 @@
+
+public class DistinctiveWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str="This is a test program asdddddddddddddddddddddddddddd";
+		
+		int count=(str.split("\\s+")).length;
+		
+		String[] ch=str.split("\\s+");
+		char[] output = null;
+//		/for(String s:ch)
+			//System.out.println(s);
+		
+		
+		
+		char[] chArray=str.toCharArray();
+		int i=0;
+		int j=1;
+		
+		while(j<chArray.length){
+			if(chArray[i]==chArray[j]){
+				j++;
+			}
+			else{
+				i++;
+				chArray[i]=chArray[j];
+				j++;
+			}
+			output=new char[i+1];
+			
+			for(int k=0;k<output.length;k++){
+				output[k]=chArray[k];
+				
+				
+			}
+			
+		}
+		
+		for(int k=0;k<output.length;k++){
+			System.out.println(output[k]);
+			
+			
+		}
+	
+			
+	
+	}
+
+}

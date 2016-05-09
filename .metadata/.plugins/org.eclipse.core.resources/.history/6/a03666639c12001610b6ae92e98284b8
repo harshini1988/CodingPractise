@@ -1,0 +1,38 @@
+import java.util.Stack;
+
+
+public class SortStack {
+
+	public static void main(String args[]){
+		Stack<Integer> newStack=new Stack<Integer>();
+		
+		newStack.push(5);
+		newStack.push(2);
+		newStack.push(4);
+		newStack.push(6);
+		newStack.push(8);
+		newStack.push(1);
+		
+		System.out.println("Final Sorted Stack is --"+sortStack(newStack));
+		
+	}
+	
+	public static Stack<Integer> sortStack(Stack<Integer> input){
+		Stack<Integer> tmpStack=new Stack<Integer>();
+		
+		while(!input.isEmpty()){
+			int temp=input.pop();
+			
+			while(!tmpStack.isEmpty() && tmpStack.peek() > temp){
+				input.push(tmpStack.pop());
+			}
+			
+			tmpStack.push(temp);
+		}
+		
+		System.out.println("Input Stack: "+input);
+		//System.out.println("tmpStack: "+tmpStack);
+		
+		return tmpStack;
+	}
+}

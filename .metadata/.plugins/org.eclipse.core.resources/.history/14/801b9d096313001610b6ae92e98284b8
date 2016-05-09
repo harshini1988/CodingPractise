@@ -1,0 +1,35 @@
+import java.util.HashMap;
+
+
+public class LongestSubString {
+	
+	public static void main(String args[]){
+		String str="abcbdefbc";
+		System.out.println(lengthofLongestSubStr(str));
+	}
+	
+	public static int lengthofLongestSubStr(String inputStr){
+		if(inputStr==null)
+			return 0;
+		
+		char[] inputStrArray=inputStr.toCharArray();
+		int pre=0;
+		
+		HashMap<Character,Integer> map=new HashMap<Character,Integer>();
+		
+		for(int i=0;i<inputStrArray.length;i++){
+			if(!map.containsKey(inputStrArray[i])){
+				map.put(inputStrArray[i], i);
+			}
+			else{
+				pre =Math.max(pre, map.size());
+				i=map.get(inputStrArray[i]);
+				map.clear();
+				
+			}
+		}
+		
+		return  Math.max(pre,map.size());
+	}
+
+}

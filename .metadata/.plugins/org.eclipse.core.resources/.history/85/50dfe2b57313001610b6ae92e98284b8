@@ -1,0 +1,33 @@
+import java.util.Comparator;
+
+
+public class LongestLinesInFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+	}
+	
+	public static class Entries{
+		Integer length;
+		String line;
+		Entries(String line,Integer l){
+			this.line=line;
+			this.length=l;
+		}
+	}
+	
+	public static class CompareLine implements Comparator<Entries>{
+		
+		public int compare(Entries e1,Entries e2){
+			if(e2.length > e1.length)
+				return 1;
+			else 
+				return 0;
+		}
+		
+	}
+
+}

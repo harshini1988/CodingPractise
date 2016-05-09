@@ -1,0 +1,15 @@
+
+public class DistinctiveWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str="This is a test program asdddddddddddddddddddddddddddd";
+		
+		int count=(str.split("\\s+")).length;
+		
+		System.out.println(count);
+
+	}
+
+}
